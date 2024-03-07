@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input></input>
+    <button>FIZZ BUZZ</button>
+    
+    
+    <script>
+        //ask for a number from user from the input
+        let num;
+        let input = document.querySelector("input");
+        input.addEventListener("change", function(){
+            num = input.value;
+        });
+        
+
+
+        function fizzBuzz(n){
+
+            let text = ""
+            //iterate from numbers 1 through num
+            for(let i = 1; i <= n; i++){
+                //if it is divisible by 3 and 5 return Fizz Buzz
+                if((i % 3 === 0) && (i % 5 === 0)){
+                    text += "Fizz Buzz, ";
+                }else if(i % 3 ===  0){
+                    text += "Fizz, "; //divisible by 3 return Fizz
+                }else if(i % 5 === 0){
+                    text += "Buzz, "; //divisible by 5 return Buzz
+                }else{
+                    text += i + ", "; //If none apply return the number
+                }
+
+            }
+            return text;
+        }
+        let button = document.querySelector("button");
+        button.addEventListener("click", function(){
+        let par = document.createElement("p")
+        par.innerHTML = fizzBuzz(num);
+        document.body.appendChild(par)
+        } );
+        
+
+
+
+
+    </script>
+
+</body>
+</html>
